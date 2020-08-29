@@ -1162,6 +1162,39 @@ INSERT INTO `curso` (`id_curso`, `nombre_curso`, `observacion`, `estado`, `fecha
 --
 ALTER TABLE `curso`
   ADD PRIMARY KEY (`id_curso`);
+  
+  
+INSERT INTO `grado` (`id_grado`, `nombre_grado`, `estado`) VALUES
+(1, 'Prekinder1', 'A'),
+(2, 'Prekinder2', 'A'),
+(3, 'Kinder', 'A'),
+(4, 'Preparatoria', 'A');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `grado`
+--
+ALTER TABLE `grado`
+  ADD PRIMARY KEY (`id_grado`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `grado`
+--
+ALTER TABLE `grado`
+  MODIFY `id_grado` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo que identifica al grado', AUTO_INCREMENT=5;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 --
 -- AUTO_INCREMENT for dumped tables
