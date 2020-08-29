@@ -1756,3 +1756,79 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
+
+INSERT INTO `maestro_curso` (`id_maestro_curso`, `id_maestro`, `id_curso`, `id_grado`, `id_aula`, `descripcion`, `fecha_creacion`, `estado`) VALUES
+(1, 13, 2, 2, 5, 'FNlFuoNWMx', '2020-08-27', 'A'),
+(3, 16, 5, 2, 1, 'aOtsZJugTB', '2020-08-21', 'A'),
+(5, 1, 4, 1, 3, 'FCZVUXGdTM', '2020-08-25', 'B'),
+(7, 25, 6, 3, 4, 'Gf SDwhQEl', '2020-08-24', 'B'),
+(8, 1, 6, 4, 1, 'dyoumVkkQt', '2020-08-22', 'A'),
+(9, 8, 6, 3, 3, 'rHSKvbYMnq', '2020-08-24', 'A'),
+(12, 15, 5, 2, 1, 'Unk LWI LC', '2020-08-27', 'B'),
+(13, 1, 4, 2, 2, 'nKVUKWgeRA', '2020-08-22', 'A'),
+(14, 17, 2, 2, 2, 'RSaYxEvjlQ', '2020-08-23', 'A'),
+(19, 28, 1, 3, 3, 'b SyhEXAlS', '2020-08-27', 'A'),
+(21, 17, 4, 3, 4, 'tSxtyrTGqU', '2020-08-23', 'A'),
+(22, 11, 6, 4, 4, 'dKQgJKvxgb', '2020-08-24', 'B'),
+(27, 7, 4, 3, 4, 'XiRkuJljJa', '2020-08-25', 'B'),
+(28, 27, 3, 3, 4, 'OxXPgOGHIV', '2020-08-24', 'A'),
+(29, 29, 5, 4, 1, 'YOwseNfNdL', '2020-08-25', 'B'),
+(30, 13, 2, 2, 4, 'qsoICnXYIO', '2020-08-25', 'A'),
+(31, 20, 5, 4, 4, 'cUqxRryxCY', '2020-08-24', 'B'),
+(32, 11, 2, 3, 4, 'uSAuKxSVZx', '2020-08-23', 'B'),
+(33, 29, 2, 1, 3, 'cDIzHJWPGC', '2020-08-25', 'B'),
+(35, 6, 1, 2, 1, 'ZTjOuKOvXJ', '2020-08-23', 'B'),
+(36, 3, 4, 3, 5, 'eiFaTUvOzW', '2020-08-23', 'A'),
+(37, 5, 2, 4, 1, 'GIfTaEQ Xf', '2020-08-25', 'A'),
+(38, 29, 3, 1, 1, 'Fx XJFbkON', '2020-08-23', 'A'),
+(39, 20, 1, 4, 2, 'CTalPlpDjU', '2020-08-21', 'B'),
+(40, 23, 4, 3, 4, 'MiFzZJWCJp', '2020-08-26', 'A'),
+(41, 15, 1, 2, 1, 'SeQxJprGHE', '2020-08-23', 'A'),
+(43, 19, 1, 4, 2, 'GlIBJbGtaL', '2020-08-24', 'B'),
+(45, 27, 4, 2, 2, 'xOABptNvtc', '2020-08-26', 'A'),
+(46, 9, 5, 4, 1, 'zDPY ekoUf', '2020-08-23', 'B'),
+(47, 28, 2, 3, 4, 'hNODXlOjsf', '2020-08-26', 'A'),
+(50, 3, 3, 3, 1, 'OHbGZMJnjk', '2020-08-24', 'A'),
+(51, 23, 5, 4, 2, 'JsqvzDRCnp', '2020-08-26', 'B');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `maestro_curso`
+--
+ALTER TABLE `maestro_curso`
+  ADD PRIMARY KEY (`id_maestro_curso`),
+  ADD KEY `macu_id_curso_idx` (`id_curso`),
+  ADD KEY `macu_id_grado_idx` (`id_grado`),
+  ADD KEY `macu_id_aula_idx` (`id_aula`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `maestro_curso`
+--
+ALTER TABLE `maestro_curso`
+  MODIFY `id_maestro_curso` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de asignacion', AUTO_INCREMENT=52;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `maestro_curso`
+--
+ALTER TABLE `maestro_curso`
+  ADD CONSTRAINT `macu_id_aula` FOREIGN KEY (`id_aula`) REFERENCES `aula` (`id_aula`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `macu_id_curso` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id_curso`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `macu_id_grado` FOREIGN KEY (`id_grado`) REFERENCES `grado` (`id_grado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `macu_id_maestro` FOREIGN KEY (`id_maestro_curso`) REFERENCES `maestro` (`id_maestro`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
