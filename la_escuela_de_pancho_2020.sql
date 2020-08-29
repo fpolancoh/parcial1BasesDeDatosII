@@ -1832,3 +1832,36 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
+INSERT INTO `unidad` (`id_unidad`, `nombre_unidad`, `fecha_inicio`, `fecha_fin`, `estado`) VALUES
+(1, 'uno', '2020-08-28', '2020-08-28', 'A'),
+(2, 'dos', '2020-08-28', '2020-08-28', 'A'),
+(3, 'tres', '2020-08-28', '2020-08-28', 'A'),
+(4, 'cuatro', '2020-08-28', '2020-08-28', 'A'),
+(5, 'cinco', '2020-08-28', '2020-08-28', 'A'),
+(6, 'seis', '2020-08-28', '2020-08-28', 'A');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `unidad`
+--
+ALTER TABLE `unidad`
+  ADD PRIMARY KEY (`id_unidad`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `unidad`
+--
+ALTER TABLE `unidad`
+  MODIFY `id_unidad` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de identificacion de unidad', AUTO_INCREMENT=854;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
