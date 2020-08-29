@@ -1090,8 +1090,8 @@ INSERT INTO `usuario` (`id_usuario`, `usuario`, `password`, `fecha_ultimo_cambio
 --
 -- Indexes for table `usuario`
 --
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`);
+  ALTER TABLE `usuario`
+    ADD PRIMARY KEY (`id_usuario`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1108,3 +1108,39 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
+INSERT INTO `identificacion` (`id_identificacion`, `nombre_identificacion`, `estado`) VALUES
+(1, 'DPI', 'A'),
+(2, 'Cadula', 'A'),
+(3, 'Licencia', 'A'),
+(4, 'CarnetUniversitario', 'A'),
+(5, 'CarnetTrabajo', 'A'),
+(6, 'DPI', 'B'),
+(7, 'Cadula', 'B'),
+(8, 'Licencia', 'B'),
+(9, 'CarnetUniversitario', 'B'),
+(10, 'CarnetTrabajo', 'B');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `identificacion`
+--
+ALTER TABLE `identificacion`
+  ADD PRIMARY KEY (`id_identificacion`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `identificacion`
+--
+ALTER TABLE `identificacion`
+  MODIFY `id_identificacion` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de identificacion ', AUTO_INCREMENT=11;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
