@@ -1144,3 +1144,37 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+INSERT INTO `curso` (`id_curso`, `nombre_curso`, `observacion`, `estado`, `fecha_creacion`) VALUES
+(1, 'Hogar', 'Muy dificil', 'B', '2020-08-29 02:18:35'),
+(2, 'Mate', 'Es muy dificil', 'A', '2020-08-29 01:15:40'),
+(3, 'Idioma', 'Es muy dificil', 'B', '2020-08-29 01:17:37'),
+(4, 'Deporte', 'Es muy facil', 'A', '2020-08-29 01:17:37'),
+(5, 'Sociales', 'Medio Medio', 'B', '2020-08-29 01:17:37'),
+(6, 'Ciencias', 'Muy dificil', 'A', '2020-08-29 01:17:37');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `curso`
+--
+ALTER TABLE `curso`
+  ADD PRIMARY KEY (`id_curso`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `curso`
+--
+ALTER TABLE `curso`
+  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de curso', AUTO_INCREMENT=8;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
