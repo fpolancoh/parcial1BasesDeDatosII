@@ -515,3 +515,24 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2020-08-28 13:18:30
+
+INSERT INTO `aula` ( `nombre_aula`, `capacidad`, `usuario_creacion`, `fecha_creacion`, `usuario_modifica`, `fecha_modifica`, `estado`) VALUES
+('c-0001', 27, 'coordinador', '7/25/2020', 'maestro', '8/22/2020', 'A'),
+('c-0002', 26, 'coordinador', '7/25/2020', 'maestro', '8/24/2020', 'A'),
+('c-0003', 21, 'maestro', '7/25/2020', 'maestro', '8/25/2020', 'A'),
+('c-0004', 28, 'director', '7/24/2020', 'coordinador', '8/24/2020', 'A'),
+('c-0005', 21, 'auxiliar', '7/23/2020', 'director', '8/24/2020', 'B');
+
+
+ALTER TABLE `aula`
+  ADD PRIMARY KEY (`id_aula`);
+
+
+ALTER TABLE `aula`
+  MODIFY `id_aula` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de identificacion para el aula', AUTO_INCREMENT=6;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
