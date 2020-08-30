@@ -561,18 +561,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `usuario`
 --
 
-CREATE TABLE `usuario` (
-  `id_usuario` int(11) NOT NULL COMMENT 'codigo del usuario',
-  `usuario` varchar(45) NOT NULL COMMENT 'nombre del usuario',
-  `password` varchar(15) NOT NULL COMMENT 'contraseña definida por usuario',
-  `fecha_ultimo_cambio_password` date NOT NULL COMMENT 'ultima fecha de cambio de passowrd',
-  `contador_intento_fallidos` varchar(45) NOT NULL COMMENT 'contador de intentos fallidos al acceder',
-  `codigo_restauracion` varchar(45) NOT NULL COMMENT 'codigo de nuevo acceso por si se olvido el password',
-  `correo` varchar(45) NOT NULL COMMENT 'correo_restauracion_usuario',
-  `celular` int(11) NOT NULL COMMENT 'numero_telefono_para_restauracion',
-  `status` enum('A','B') NOT NULL COMMENT 'Indica si esta de Alta o de Baja del usuario'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='tabla que contiene a los usuarios que manejaran la informacion ';
-
 --
 -- Dumping data for table `usuario`
 --
