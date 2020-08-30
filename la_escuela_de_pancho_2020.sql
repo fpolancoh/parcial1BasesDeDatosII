@@ -135,8 +135,6 @@ CREATE TABLE `aula` (
 --
 
 LOCK TABLES `aula` WRITE;
-/*!40000 ALTER TABLE `aula` DISABLE KEYS */;
-/*!40000 ALTER TABLE `aula` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -524,8 +522,6 @@ INSERT INTO `aula` ( `nombre_aula`, `capacidad`, `usuario_creacion`, `fecha_crea
 ('c-0005', 21, 'auxiliar', '7/23/2020', 'director', '8/24/2020', 'B');
 
 
-ALTER TABLE `aula`
-  ADD PRIMARY KEY (`id_aula`);
 
 
 ALTER TABLE `aula`
@@ -2408,4 +2404,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
