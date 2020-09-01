@@ -524,9 +524,6 @@ INSERT INTO `aula` ( `nombre_aula`, `capacidad`, `usuario_creacion`, `fecha_crea
 
 
 
-ALTER TABLE `aula`
-  MODIFY `id_aula` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de identificacion para el aula', AUTO_INCREMENT=6;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
@@ -1074,8 +1071,7 @@ INSERT INTO `usuario` (`id_usuario`, `usuario`, `password`, `fecha_ultimo_cambio
 --
 -- Indexes for table `usuario`
 --
-  ALTER TABLE `usuario`
-    ADD PRIMARY KEY (`id_usuario`);
+
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1084,9 +1080,7 @@ INSERT INTO `usuario` (`id_usuario`, `usuario`, `password`, `fecha_ultimo_cambio
 --
 -- AUTO_INCREMENT for table `usuario`
 --
-ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo del usuario', AUTO_INCREMENT=1001;
-COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
@@ -1111,8 +1105,6 @@ INSERT INTO `identificacion` (`id_identificacion`, `nombre_identificacion`, `est
 --
 -- Indexes for table `identificacion`
 --
-ALTER TABLE `identificacion`
-  ADD PRIMARY KEY (`id_identificacion`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1121,9 +1113,7 @@ ALTER TABLE `identificacion`
 --
 -- AUTO_INCREMENT for table `identificacion`
 --
-ALTER TABLE `identificacion`
-  MODIFY `id_identificacion` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de identificacion ', AUTO_INCREMENT=11;
-COMMIT;
+;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
@@ -1144,8 +1134,6 @@ INSERT INTO `curso` (`id_curso`, `nombre_curso`, `observacion`, `estado`, `fecha
 --
 -- Indexes for table `curso`
 --
-ALTER TABLE `curso`
-  ADD PRIMARY KEY (`id_curso`);
   
   
 INSERT INTO `grado` (`id_grado`, `nombre_grado`, `estado`) VALUES
@@ -1161,8 +1149,6 @@ INSERT INTO `grado` (`id_grado`, `nombre_grado`, `estado`) VALUES
 --
 -- Indexes for table `grado`
 --
-ALTER TABLE `grado`
-  ADD PRIMARY KEY (`id_grado`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1171,9 +1157,7 @@ ALTER TABLE `grado`
 --
 -- AUTO_INCREMENT for table `grado`
 --
-ALTER TABLE `grado`
-  MODIFY `id_grado` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo que identifica al grado', AUTO_INCREMENT=5;
-COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
@@ -1186,10 +1170,7 @@ COMMIT;
 
 --
 -- AUTO_INCREMENT for table `curso`
---
-ALTER TABLE `curso`
-  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de curso', AUTO_INCREMENT=8;
-COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
@@ -1711,9 +1692,6 @@ INSERT INTO `maestro` (`id_maestro`, `id_identificacion`, `codigo_identificacion
 --
 -- Indexes for table `maestro`
 --
-ALTER TABLE `maestro`
-  ADD PRIMARY KEY (`id_maestro`),
-  ADD KEY `id_identificacion_idx` (`id_identificacion`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1732,9 +1710,7 @@ ALTER TABLE `maestro`
 --
 -- Constraints for table `maestro`
 --
-ALTER TABLE `maestro`
-  ADD CONSTRAINT `id_identificacion` FOREIGN KEY (`id_identificacion`) REFERENCES `identificacion` (`id_identificacion`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
@@ -1782,11 +1758,6 @@ INSERT INTO `maestro_curso` (`id_maestro_curso`, `id_maestro`, `id_curso`, `id_g
 --
 -- Indexes for table `maestro_curso`
 --
-ALTER TABLE `maestro_curso`
-  ADD PRIMARY KEY (`id_maestro_curso`),
-  ADD KEY `macu_id_curso_idx` (`id_curso`),
-  ADD KEY `macu_id_grado_idx` (`id_grado`),
-  ADD KEY `macu_id_aula_idx` (`id_aula`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1805,12 +1776,7 @@ ALTER TABLE `maestro_curso`
 --
 -- Constraints for table `maestro_curso`
 --
-ALTER TABLE `maestro_curso`
-  ADD CONSTRAINT `macu_id_aula` FOREIGN KEY (`id_aula`) REFERENCES `aula` (`id_aula`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `macu_id_curso` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id_curso`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `macu_id_grado` FOREIGN KEY (`id_grado`) REFERENCES `grado` (`id_grado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `macu_id_maestro` FOREIGN KEY (`id_maestro_curso`) REFERENCES `maestro` (`id_maestro`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
@@ -1831,8 +1797,6 @@ INSERT INTO `unidad` (`id_unidad`, `nombre_unidad`, `fecha_inicio`, `fecha_fin`,
 --
 -- Indexes for table `unidad`
 --
-ALTER TABLE `unidad`
-  ADD PRIMARY KEY (`id_unidad`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1841,25 +1805,15 @@ ALTER TABLE `unidad`
 --
 -- AUTO_INCREMENT for table `unidad`
 --
-ALTER TABLE `unidad`
-  MODIFY `id_unidad` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de identificacion de unidad', AUTO_INCREMENT=854;
-COMMIT;
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
-CREATE TABLE `alumno` (
-  `id_alumno` int(11) NOT NULL COMMENT 'codigo de alumno',
-  `nombre_alumno` varchar(45) NOT NULL COMMENT 'nombre completo del alumno',
-  `id_usuario` int(11) NOT NULL COMMENT 'codigo de usuario para uso del sistema',
-  `direccion` varchar(155) NOT NULL COMMENT 'direccion donde vive el alumno',
-  `celular` int(11) NOT NULL COMMENT 'numero de telefono para notificaiones',
-  `correo` varchar(45) NOT NULL COMMENT 'correo electronico para notificaciones',
-  `fecha_creacion` date NOT NULL COMMENT 'fecha que se creo el alumno',
-  `id_grado` int(11) NOT NULL COMMENT 'fk codigo de grado'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 --
 -- Dumping data for table `alumno`
@@ -2374,9 +2328,6 @@ INSERT INTO `alumno` (`nombre_alumno`, `id_usuario`, `direccion`, `celular`, `co
 --
 -- Indexes for table `alumno`
 --
-ALTER TABLE `alumno`
-  ADD PRIMARY KEY (`id_alumno`),
-  ADD KEY `id_grado_idx` (`id_grado`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -2387,7 +2338,6 @@ ALTER TABLE `alumno`
 --
 ALTER TABLE `alumno`
   MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de alumno', AUTO_INCREMENT=1003;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
