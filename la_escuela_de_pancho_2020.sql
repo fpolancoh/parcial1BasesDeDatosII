@@ -1,3 +1,7 @@
+/*otro comentario*/
+
+
+
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: escuelita_pancho_27_08_2020
@@ -3342,6 +3346,4 @@ INSERT INTO papeleria_alumno (`id_alumno`) VALUES (497);
 INSERT INTO papeleria_alumno (`id_alumno`) VALUES (498);
 INSERT INTO papeleria_alumno (`id_alumno`) VALUES (499);
 INSERT INTO papeleria_alumno (`id_alumno`) VALUES (500);
-
-/* comentario */
 
